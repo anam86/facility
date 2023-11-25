@@ -28,9 +28,6 @@ class Groups extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('groups');
-
-        $seeder = \Config\Database::seeder();
-        $seeder->call('GroupSeeder');
     }
 
     public function down()

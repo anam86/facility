@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Lupa Password | Test on Load</title>
+        <title>Lupa Password | Facility</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
@@ -29,7 +29,7 @@
                                         <a href="index.html" class="logo logo-admin">
                                             <img src="<?= base_url() ?>/dastone/dastone-1/default/assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo pt-1">
                                         </a>
-                                        <h4 class="mt-3 mb-1 font-weight-semibold text-white font-18">Reset Password Test on Load</h4>   
+                                        <h4 class="mt-3 mb-1 font-weight-semibold text-white font-18">Reset Password Facility</h4>   
                                         <p class="text-muted  mb-0">Masukkan emailmu dan instruksi akan dikirimkan kepadamu!</p>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                     <p class="text-muted mb-0 mt-3">Ingat kembali?  <a href="<?= base_url('/') ?>" class="text-primary ml-2">Login</a></p>
                                 </div>
                                 <div class="card-body bg-light-alt text-center">
-                                    <span class="text-muted d-none d-sm-inline-block">Test on Load © 2022</span>
+                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2022</span>
                                 </div>
                             </div>
                         </div>

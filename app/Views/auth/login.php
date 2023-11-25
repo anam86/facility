@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Login | Test on Load </title>
+        <title>Login | Facility </title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
@@ -28,7 +28,7 @@
                                         <a href="#" class="logo logo-admin">
                                             <img src="<?= base_url() ?>/dastone/dastone-1/default/assets/images/logo-sm-dark.png" height="50" alt="logo" class="auth-logo mt-1">
                                         </a>
-                                        <h4 class="mt-3 mb-1 font-weight-semibold text-white font-18">Manajemen Test on Load</h4>   
+                                        <h4 class="mt-3 mb-1 font-weight-semibold text-white font-18">Manajemen Facility</h4>   
                                     </div>
                                 </div>
                                 <div class="card-body p-0">
@@ -57,17 +57,19 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <div class="col-12 text-center">
-                                                        <a href="<?= base_url() ?>/auth/lupa_password" class="text-muted font-13"><i class="dripicons-lock"></i> Lupa password?</a>
-                                                    </div>
-                                                </div>
+                                                <?php
+                                                    /* '<div class="form-group row">
+                                                        <div class="col-12 text-center">
+                                                            <a href="<?= base_url() ?>/auth/lupa_password" class="text-muted font-13"><i class="dripicons-lock"></i> Lupa password?</a>
+                                                        </div>
+                                                    </div>' */
+                                                ?>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body bg-light-alt text-center">
-                                    <span class="text-muted d-none d-sm-inline-block">Test on Load © 2022</span>
+                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2022</span>
                                 </div>
                             </div>
                         </div>

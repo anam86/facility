@@ -27,9 +27,9 @@ class UserSeeder extends Seeder
                 'updated_at'    => Time::now()
             ],
             [
-                'username'      => 'anggota',
+                'username'      => 'member',
                 'password'      => password_hash('123123', PASSWORD_BCRYPT),
-                'email'         => 'anggota@gmail.com',
+                'email'         => 'member@gmail.com',
                 'id_group'      => 3,
                 'created_at'    => Time::now(),
                 'updated_at'    => Time::now()

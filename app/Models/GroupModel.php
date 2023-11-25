@@ -52,12 +52,13 @@ class GroupModel extends Model
     public function insertUpdate($data, $id = null)
     {
         $this->transStart();
-        $saveData = $this->save([
-            'id'            => $id,
-            'nama_group'    => $data['nama_group']
-        ]);
+        if ($id == null) {
+            $saveData = $this->insert($data);
+        } else {
+            $saveData = $this->where("id", $id)->update($data);
+        }
         $this->transComplete();
-
+        
         return $saveData;
     }
 

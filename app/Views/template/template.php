@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title><?= $title . ' | Test on Load' ?></title>
+    <title><?= $title . ' | Facility' ?></title>
     <meta name="<?= csrf_header() ?>" content="<?= csrf_hash() ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="Aplikasi Test on Load" name="description" />
+    <meta content="Aplikasi Facility" name="description" />
     <meta content="" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -42,7 +42,7 @@
                                 <div class="col">
                                     <h4 class="page-title"><?= $title ?></h4>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Test on Load</a></li>
+                                        <li class="breadcrumb-item"><a href="<?= base_url('/') ?>">Facility</a></li>
                                         <?php if (isset($subtitle) == False): ?>
                                         <li class="breadcrumb-item active"><?= $title ?></li>
                                         <?php else: ?>

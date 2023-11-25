@@ -52,14 +52,15 @@ class Group extends BaseController
             return redirect()->to(base_url().'/group/create')->withInput();
         }
 
-        $data   = $this->request->getVar();
+        $data = $this->request->getVar();
         try {
-            $this->group->insertUpdate($data);
+            $id_group = $this->group->insertUpdate($data);
+            $this->reseedGmenu("group", $id_group);
         } catch (\Throwable $th) {
-            return redirect()->to(base_url().'/group')->with('error', 'Gagal buat Group!' . $th);
+            return redirect()->to(base_url().'/group')->with('error', 'Data gagal dibuat!' . $th);
         }
 
-        return redirect()->to(base_url().'/group')->with('success', 'Berhasil buat Group!');
+        return redirect()->to(base_url().'/group')->with('success', 'Data berhasil dibuat!');
     }
 
     public function edit($id)
@@ -103,15 +104,16 @@ class Group extends BaseController
         try {
             $this->group->insertUpdate($data, $id);
         } catch (\Throwable $th) {
-            return redirect()->to(base_url().'/group')->with('error', 'Gagal ubah Group!' . $th);
+            return redirect()->to(base_url().'/group')->with('error', 'Data gagal diubah!' . $th);
         }
 
-        return redirect()->to(base_url().'/group')->with('success', 'Berhasil ubah Group!');
+        return redirect()->to(base_url().'/group')->with('success', 'Data berhasil diubah!');
     }
 
     public function destroy($id)
     {
         $this->group->destroy($id);
+        $this->reseedGmenu();
         return redirect()->to(base_url() . '/group')->with('success', 'Data berhasil dihapus!');
     }
 }

@@ -24,11 +24,11 @@ class Users extends Migration
             ],
             'email' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => 150,
                 'unique'     => true
             ],
             'id_group' => [
-                'type' => 'BIGINT',
+                'type'       => 'BIGINT',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -40,10 +40,8 @@ class Users extends Migration
             ]
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('id_group', 'groups', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('users');
-
-        $seeder = \Config\Database::seeder();
-        $seeder->call('UserSeeder');
     }
 
     public function down()

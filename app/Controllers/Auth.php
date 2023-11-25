@@ -9,7 +9,7 @@ class Auth extends BaseController
     public function index()
     {
         if (session()->login == true) {
-            return redirect()->to(base_url() . '/');
+            return redirect()->to(base_url() . '/dashboard');
         }
 
         return view('auth/login');
@@ -27,12 +27,11 @@ class Auth extends BaseController
             return redirect()->to(base_url() . '/')->with('error', 'Username atau Password tidak boleh kosong!');
         };
 
-        $dataUser = $this->user->getUserbyUsername($reqUsername);
+        $dataUser    = $this->user->getUserbyUsername($reqUsername);
         if ($dataUser) {
             $verifPassword = password_verify($reqPassword, $dataUser->password);
             if ($verifPassword) {
                 $sessionData = [
-                    // 'nama'      => $dataUser->nama_lengkap,
                     'username'  => $dataUser->username,
                     'email'     => $dataUser->email,
                     'group'     => $dataUser->id_group,
@@ -40,7 +39,7 @@ class Auth extends BaseController
                 ];
 
                 session()->set($sessionData);
-                return redirect()->to(base_url() . '/')->with('success', 'Selamat Datang.');
+                return redirect()->to(base_url() . '/dashboard')->with('success', 'Selamat Datang.');
             } else {
                 return redirect()->to(base_url() . '/')->with('error', 'Username atau Password Salah!');
             }

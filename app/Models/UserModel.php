@@ -42,9 +42,6 @@ class UserModel extends Model
 
     public function getUserbyUsername($username = null)
     {
-        // return $this->join('profiles', 'users.id = profiles.id_user', 'left')
-        //             ->where('username', $username)->get()->getRow();
-
-        return $this->where("username", $username)->get()->getRow();
+        return $this->where('username', $username)->get()->getRow();
     }
 }

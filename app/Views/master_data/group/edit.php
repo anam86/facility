@@ -6,8 +6,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col d-flex align-items-center">
+                    <div class="col d-flex align-items-center justify-content-between">
                         <h4 class="card-title"><?= $subtitle . ' ' . $title ?></h4>
+                        <div>
+                            <a href="<?= base_url() . '/' . current_url(true)->getSegment(2) ?>">
+                                <button type="button" class="btn btn-sm btn-primary">Back</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -16,6 +21,7 @@
                 <div class="row">
                     <div class="col">
                         <form action="<?= base_url() ?>/group/update/<?= $group->id ?>" method="POST" id="myForm">
+                            <?= csrf_field() ?>
                             <input type="text" class="form-control <?= ($validation->hasError('nama_group')) ? 'is-invalid' : ''; ?>" name="nama_group" id="nama_group" placeholder="Nama Group" value="<?= old('nama_group', $group->nama_group); ?>">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('nama_group'); ?> 
