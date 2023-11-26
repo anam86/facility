@@ -51,13 +51,6 @@ class MenuModel extends Model
 
     public function getMenubyName($nama_menu)
     {
-        $selectData = [
-            'menus.id',
-            'allow_view', 'allow_create', 'allow_edit', 'allow_delete', 'allow_import', 'allow_export'
-        ];
-
-        return $this->select($selectData)
-                    ->join('groupmenus', 'menus.id = groupmenus.id_menu')
-                    ->where('nama_menu', $nama_menu)->get()->getRow();
+        return $this->where('nama_menu', $nama_menu)->get()->getRow();
     }
 }

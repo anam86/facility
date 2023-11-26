@@ -84,13 +84,13 @@ class GroupMenuModel extends Model
             return $this->select($selectData)
                         ->join('groups', 'groupmenus.id_group = groups.id')
                         ->join('menus', 'groupmenus.id_menu = menus.id')
-                        ->orderBy('id', 'ASC')
+                        ->orderBy('kategori')
                         ->where(['urutan' => $data, 'id_group' => session()->group])->get()->getResult();
         } else {
             return $this->select($selectData)
                         ->join('groups', 'groupmenus.id_group = groups.id')
                         ->join('menus', 'groupmenus.id_menu = menus.id')
-                        ->orderBy('urutan', 'ASC')
+                        ->orderBy('nama_menu')
                         ->where(['kategori' => $data, 'urutan !=' => "#", 'id_group' => session()->group])
                         ->get()->getResult();
         }
