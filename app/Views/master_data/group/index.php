@@ -31,21 +31,21 @@
                     <tbody>
                         <?php
                             $i = 1;
-                            foreach ($group as $key => $value):
-                            if ($value->id == 1) { continue; }
+                            foreach ($groups as $key => $group):
+                            if ($group->id == 1) { continue; }
                         ?>
                         <tr class="text-center">
                             <td><?= $i++ ?></td>
-                            <td><?= $value->nama_group ?></td>
+                            <td><?= $group->nama_group ?></td>
                             <?php if ($gmenu->allow_edit == true || $gmenu->allow_delete == true) : ?>
                             <td>
                                 <?php if ($gmenu->allow_edit == true) : ?>
-                                <a href="<?= base_url() . "/group/edit/" . $value->id ?>"><i class="las la-pen text-info font-18"></i></a>
+                                <a href="<?= base_url() . "/group/edit/" . $group->id ?>"><i class="las la-pen text-info font-18"></i></a>
                                 <?php
                                     endif;
                                     if ($gmenu->allow_delete == true) :
                                 ?>
-                                <form class="d-inline" action="<?= base_url() ?>/group/<?= $value->id ?>" method="post">
+                                <form class="d-inline" action="<?= base_url() ?>/group/<?= $group->id ?>" method="post">
                                     <?= csrf_field() ?>
                                     <input type="hidden" name="_method" value="delete">
                                     <button class="border-0 bg-white" type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');"><i class="las la-trash-alt text-danger font-18"></i></button>

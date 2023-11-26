@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
     <head>
         <meta charset="utf-8" />
@@ -51,7 +51,7 @@
                                     <p class="text-muted mb-0 mt-3">Ingat kembali?  <a href="<?= base_url('/') ?>" class="text-primary ml-2">Login</a></p>
                                 </div>
                                 <div class="card-body bg-light-alt text-center">
-                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2022</span>
+                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2023</span>
                                 </div>
                             </div>
                         </div>

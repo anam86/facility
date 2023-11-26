@@ -27,7 +27,8 @@ class Menus extends Migration
             ],
             'nama_menu' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 50
+                'constraint' => 50,
+                'unique'     => true
             ],
             'nama_url' => [
                 'type'       => 'VARCHAR',

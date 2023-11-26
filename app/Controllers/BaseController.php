@@ -53,13 +53,15 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
-        $this->group    = new GroupModel();
-        $this->gmenu    = new GroupMenuModel();
-        $this->menu     = new MenuModel();
-        $this->user     = new UserModel();
+        $this->validation = \Config\Services::validation();
+
+        $this->group = new GroupModel();
+        $this->gmenu = new GroupMenuModel();
+        $this->menu  = new MenuModel();
+        $this->user  = new UserModel();
     }
 
-    function reseedGmenu($parameter = null, $id = null)
+    public function reseedGmenu($parameter = null, $id = null)
     {
         $gmenus = $this->gmenu->getAll();
         $this->gmenu->truncate();

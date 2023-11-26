@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
     <head>
         <meta charset="utf-8" />
         <title>Login | Facility </title>
@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body bg-light-alt text-center">
-                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2022</span>
+                                    <span class="text-muted d-none d-sm-inline-block">Facility © 2023</span>
                                 </div>
                             </div>
                         </div>

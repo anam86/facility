@@ -12,13 +12,11 @@ class Group extends BaseController
             return redirect()->to(base_url() . '/')->with('error', 'Silahkan login terlebih dahulu!');
         }
 
-        $group  = $this->group->getAll();
-        $menu   = $this->menu->getMenubyName('Group');
-        
+        $menu = $this->menu->getMenubyName('Group');
         $data = [
-            'title' => 'Group',
-            'group' => $group,
-            'gmenu' => $this->gmenu->getGroupmenubyFKey(session()->group, $menu->id)
+            'title'  => 'Group',
+            'groups' => $this->group->getAll(),
+            'gmenu'  => $this->gmenu->getGroupmenubyFKey(session()->group, $menu->id)
         ];
 
         return view('master_data/group/index', $data);
@@ -30,7 +28,7 @@ class Group extends BaseController
             'title'         => 'Group',
             'subtitle'      => 'Create',
             'active'        => 'active',
-            'validation'    => \Config\Services::validation()
+            'validation'    => $this->validation
         ];
 
         return view('master_data/group/create', $data);
@@ -65,13 +63,12 @@ class Group extends BaseController
 
     public function edit($id)
     {
-        $group   = $this->group->getAll($id);
-        $data       = [
+        $data = [
             'title'         => 'Group',
             'subtitle'      => 'Edit',
             'active'        => 'active',
-            'group'         => $group,
-            'validation'    => \Config\Services::validation()
+            'group'         => $this->group->getAll($id),
+            'validation'    => $this->validation
         ];
 
         return view('master_data/group/edit', $data);
@@ -79,7 +76,7 @@ class Group extends BaseController
 
     public function update($id)
     {
-        $group  = $this->group->getAll($id);
+        $group = $this->group->getAll($id);
         if (isset($group) == True) {
             $ruleNama   = 'required|min_length[2]|alpha_numeric_punct';
         } else {
@@ -100,7 +97,7 @@ class Group extends BaseController
             return redirect()->to(base_url().'/group/edit/' . $id)->withInput();
         }
 
-        $data   = $this->request->getVar();
+        $data = $this->request->getVar();
         try {
             $this->group->insertUpdate($data, $id);
         } catch (\Throwable $th) {
